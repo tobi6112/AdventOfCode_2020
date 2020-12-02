@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 
     parser.parse(args)
 
-    val d = days.split(",").mapNotNull { it.toIntOrNull() }.filter { it in 1..25 }.sorted()
+    val d = days.split(",").mapNotNull { it.toIntOrNull() }.filter { it in 1..25 }.distinct().sorted()
 
     val abstractExerciseClass = Class.forName("aoc.base.AbstractExercise").kotlin
 
