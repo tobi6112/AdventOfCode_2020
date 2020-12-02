@@ -2,4 +2,5 @@ language: java
 os: linux
 jdk: openjdk11
 script:
+  - chmod +x gradlew
   - ./gradlew mainBenchmark
