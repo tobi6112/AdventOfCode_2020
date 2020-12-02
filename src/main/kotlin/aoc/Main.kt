@@ -29,7 +29,9 @@ fun main(args: Array<String>) {
                     val day: AbstractExercise = kClass.createInstance() as AbstractExercise
                     day.solve()
                 } catch (e2: Exception) {
-                    logger.error("Couldn't instantiate ${kClass.qualifiedName}")
+                    logger.error(e2) {
+                        "Couldn't instantiate ${kClass.qualifiedName}"
+                    }
                 }
             } else {
                 logger.error("${kClass.qualifiedName} does not have superclass ${abstractExerciseClass.qualifiedName}.")
