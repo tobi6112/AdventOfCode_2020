@@ -1,8 +1,10 @@
-package day1
+package exercises
 
-class Day1_1 {
-    fun readFile(): List<Int> {
-        return this::class.java.getResource("/inputs/Day1").readText().split(System.lineSeparator()).map { it.trim().toInt() }
+import base.AbstractExercise
+
+class Day1 : AbstractExercise() {
+    fun getNumbers(): List<Int> {
+        return this.readFile("/inputs/Day1").map { it.trim().toInt() }
     }
 
     fun getNumbersThatSumTo2020(numbers: List<Int>): Pair<Int, Int>? {
@@ -33,9 +35,9 @@ class Day1_1 {
 }
 
 fun main() {
-    val day11 = Day1_1()
-    val pair = day11.getNumbersThatSumTo2020(day11.readFile())
-    val triple = day11.getThreeNumbersThatSumTo2020(day11.readFile())
+    val day11 = Day1()
+    val pair = day11.getNumbersThatSumTo2020(day11.getNumbers())
+    val triple = day11.getThreeNumbersThatSumTo2020(day11.getNumbers())
     if (pair != null) {
         println(pair.first * pair.second)
     }

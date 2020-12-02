@@ -1,11 +1,10 @@
-package day1
+package exercises
 
-class Day2() {
-    fun readFile(): List<Pair<String, String>> {
-        return this::class.java
-                .getResource("/inputs/Day2")
-                .readText()
-                .split(System.lineSeparator())
+import base.AbstractExercise
+
+class Day2 : AbstractExercise() {
+    fun readPasswords(): List<Pair<String, String>> {
+        return this.readFile("/inputs/Day2")
                 .map {
                     val split = it.split(":")
                     Pair(split[0].trim(), split[1].trim())
@@ -38,6 +37,6 @@ class Day2() {
 
 fun main() {
     val day2 = Day2()
-    println(day2.readFile().filter { day2.createPolicyFromString(it.first)(it.second) }.size)
-    println(day2.readFile().filter { day2.createSecondPolicyFromString(it.first)(it.second) }.size)
+    println(day2.readPasswords().filter { day2.createPolicyFromString(it.first)(it.second) }.size)
+    println(day2.readPasswords().filter { day2.createSecondPolicyFromString(it.first)(it.second) }.size)
 }
