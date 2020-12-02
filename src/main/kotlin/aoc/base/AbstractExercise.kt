@@ -4,6 +4,7 @@ import org.openjdk.jmh.annotations.Benchmark
 import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.State
 import java.lang.Exception
+import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 
 @State(Scope.Benchmark)
@@ -26,21 +27,15 @@ abstract class AbstractExercise(private val day: Int) {
 
     final fun solve() {
         println("\u001B[32m========= Day $day =========\u001B[0m")
-        print("\u001B[0mPart 1: ")
-        try {
-            val partOne = solveAndMeasureTime { partOne() }
-            print("\u001B[31m${partOne.first} \u001B[33m(took ${partOne.second} ms)\u001B[0m")
-        } catch (e: NotImplementedError) {
-            print("\u001B[31mnot implemented yet\u001B[0m")
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        print(System.lineSeparator())
+        printPart(1, this::partOne)
+        printPart(2, this::partTwo)
+    }
 
-        print("\u001B[0mPart 2: \u001B[0m")
+    private fun printPart(number: Int, method: () -> Unit) {
+        print("\u001B[0mPart $number: \u001B[0m")
         try {
-            val partTwo = solveAndMeasureTime { partTwo() }
-            print("\u001B[31m${partTwo.first} \u001B[33m(took ${partTwo.second} ms)\u001B[0m")
+            val part = solveAndMeasureTime { method() }
+            print("\u001B[31m${part.first} \u001B[33m(took ${part.second} ms)\u001B[0m")
         } catch (e: NotImplementedError) {
             print("\u001B[31mnot implemented yet\u001B[0m")
         } catch (e: Exception) {
@@ -49,12 +44,12 @@ abstract class AbstractExercise(private val day: Int) {
         println(System.lineSeparator())
     }
 
-    private fun solveAndMeasureTime(e: () -> Any?): Pair<Any?, Long> {
+    private fun solveAndMeasureTime(e: () -> Any?): Pair<Any?, Double> {
         val result: Any?
-        val time = measureTimeMillis {
+        val time = measureNanoTime {
             result = e()
         }
-        return Pair(result, time)
+        return Pair(result, time.toDouble().div(1_000_000))
     }
 
     @Benchmark
