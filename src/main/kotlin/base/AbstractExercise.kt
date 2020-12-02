@@ -5,7 +5,7 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 
-
+@State(Scope.Benchmark)
 abstract class AbstractExercise(private val day: Int) {
 
     val inputAsList = readFileAsList()
