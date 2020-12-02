@@ -2,13 +2,13 @@ package exercises
 
 import base.AbstractExercise
 
-class Day1 : AbstractExercise() {
-    fun getNumbers(): List<Int> {
-        return this.readFile("/inputs/Day1").map { it.trim().toInt() }
+class Day1 : AbstractExercise(1) {
+    private fun getNumbers(): List<Int> {
+        return this.inputAsList.map { it.trim().toInt() }
     }
 
-    fun getNumbersThatSumTo2020(numbers: List<Int>): Pair<Int, Int>? {
-        val sortedNumbers = numbers.sorted()
+    override fun partOne(): Pair<Int, Int>? {
+        val sortedNumbers = getNumbers().sorted()
         sortedNumbers.forEach { n ->
             sortedNumbers.forEach { n2 ->
                 if (n + n2 == 2020) {
@@ -19,8 +19,8 @@ class Day1 : AbstractExercise() {
         return null
     }
 
-    fun getThreeNumbersThatSumTo2020(numbers: List<Int>): Triple<Int, Int, Int>? {
-        val sortedNumbers = numbers.sorted()
+    override fun partTwo(): Triple<Int, Int, Int>? {
+        val sortedNumbers = getNumbers().sorted()
         sortedNumbers.forEach { n ->
             sortedNumbers.forEach { n2 ->
                 sortedNumbers.forEach { n3 ->
@@ -32,20 +32,9 @@ class Day1 : AbstractExercise() {
         }
         return null
     }
-
-    override fun solve() {
-        TODO("Not yet implemented")
-    }
 }
 
 fun main() {
     val day11 = Day1()
-    val pair = day11.getNumbersThatSumTo2020(day11.getNumbers())
-    val triple = day11.getThreeNumbersThatSumTo2020(day11.getNumbers())
-    if (pair != null) {
-        println(pair.first * pair.second)
-    }
-    if (triple != null) {
-        println(triple.first * triple.second * triple.third)
-    }
+    day11.solve()
 }

@@ -20,9 +20,9 @@ class SecondPolicy : Policy() {
     }
 }
 
-class Day2 : AbstractExercise() {
+class Day2 : AbstractExercise(2) {
     private fun readPasswords(): List<Pair<String, String>> {
-        return this.readFile("/inputs/Day2")
+        return this.inputAsList
                 .map {
                     val split = it.split(":")
                     Pair(split[0].trim(), split[1].trim())
@@ -36,9 +36,12 @@ class Day2 : AbstractExercise() {
         return Triple(letter, numbers[0], numbers[1])
     }
 
-    override fun solve() {
-        println(this.readPasswords().filter { FirstPolicy().checkPw(it.second, getParameters(it.first)) }.size)
-        println(this.readPasswords().filter { SecondPolicy().checkPw(it.second, getParameters(it.first)) }.size)
+    override fun partOne() : Int {
+        return this.readPasswords().filter { FirstPolicy().checkPw(it.second, getParameters(it.first)) }.size
+    }
+
+    override fun partTwo(): Int {
+        return this.readPasswords().filter { SecondPolicy().checkPw(it.second, getParameters(it.first)) }.size
     }
 }
 
