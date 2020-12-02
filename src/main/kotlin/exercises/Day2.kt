@@ -2,8 +2,26 @@ package exercises
 
 import base.AbstractExercise
 
+abstract class Policy {
+    fun checkPw(password: String, p: Triple<Char, Int, Int>) = checkPw(password, p.first, p.second, p.third)
+    abstract fun checkPw(password: String, c: Char, i: Int, j: Int): Boolean
+}
+
+class FirstPolicy : Policy() {
+    override fun checkPw(password: String, c: Char, i: Int, j: Int): Boolean {
+        val size = password.toCharArray().filter { it == c }.size
+        return size in i..j
+    }
+}
+
+class SecondPolicy : Policy() {
+    override fun checkPw(password: String, c: Char, i: Int, j: Int): Boolean {
+        return password.toCharArray().filterIndexed { index, ch -> (index == i || index == j) && ch == c }.size == 1
+    }
+}
+
 class Day2 : AbstractExercise() {
-    fun readPasswords(): List<Pair<String, String>> {
+    private fun readPasswords(): List<Pair<String, String>> {
         return this.readFile("/inputs/Day2")
                 .map {
                     val split = it.split(":")
@@ -11,32 +29,20 @@ class Day2 : AbstractExercise() {
                 }
     }
 
-    fun createPolicyFromString(policy: String) : (String) -> Boolean {
+    private fun getParameters(policy: String): Triple<Char, Int, Int> {
         val split = policy.split("\\s".toRegex())
         val letter = split[1].toCharArray()[0]
-        val minMax = split[0].split("-").map { it.toInt() }
-
-        return { s ->
-            val size = s.toCharArray().filter { it == letter }.size
-            size >= minMax[0] && size <= minMax[1]
-        }
+        val numbers = split[0].split("-").map { it.toInt() }
+        return Triple(letter, numbers[0], numbers[1])
     }
 
-    fun createSecondPolicyFromString(policy: String): (String) -> Boolean {
-        val split = policy.split("\\s".toRegex())
-        val letter = split[1].toCharArray()[0]
-        val pos = split[0].split("-").map { it.toInt() - 1 }
-
-        return {s ->
-            s.toCharArray()
-                    .filterIndexed {index, c -> (index == pos[0] || index == pos[1]) && c == letter }
-                    .size == 1
-        }
+    override fun solve() {
+        println(this.readPasswords().filter { FirstPolicy().checkPw(it.second, getParameters(it.first)) }.size)
+        println(this.readPasswords().filter { SecondPolicy().checkPw(it.second, getParameters(it.first)) }.size)
     }
 }
 
 fun main() {
     val day2 = Day2()
-    println(day2.readPasswords().filter { day2.createPolicyFromString(it.first)(it.second) }.size)
-    println(day2.readPasswords().filter { day2.createSecondPolicyFromString(it.first)(it.second) }.size)
+    day2.solve()
 }

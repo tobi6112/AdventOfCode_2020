@@ -19,11 +19,11 @@ class Day1 : AbstractExercise() {
         return null
     }
 
-    fun getThreeNumbersThatSumTo2020(numbers: List<Int>) : Triple<Int, Int, Int>? {
+    fun getThreeNumbersThatSumTo2020(numbers: List<Int>): Triple<Int, Int, Int>? {
         val sortedNumbers = numbers.sorted()
         sortedNumbers.forEach { n ->
             sortedNumbers.forEach { n2 ->
-                sortedNumbers.forEach {n3 ->
+                sortedNumbers.forEach { n3 ->
                     if (n + n2 + n3 == 2020) {
                         return Triple(n, n2, n3)
                     }
@@ -31,6 +31,10 @@ class Day1 : AbstractExercise() {
             }
         }
         return null
+    }
+
+    override fun solve() {
+        TODO("Not yet implemented")
     }
 }
 
