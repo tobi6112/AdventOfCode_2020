@@ -29,9 +29,10 @@ abstract class AbstractExercise(private val day: Int) {
         println("\u001B[32m========= Day $day =========\u001B[0m")
         printPart(1, this::partOne)
         printPart(2, this::partTwo)
+        print(System.lineSeparator())
     }
 
-    private fun printPart(number: Int, method: () -> Unit) {
+    private fun printPart(number: Int, method: () -> Any?) {
         print("\u001B[0mPart $number: \u001B[0m")
         try {
             val part = solveAndMeasureTime { method() }
@@ -41,7 +42,7 @@ abstract class AbstractExercise(private val day: Int) {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        println(System.lineSeparator())
+        print(System.lineSeparator())
     }
 
     private fun solveAndMeasureTime(e: () -> Any?): Pair<Any?, Double> {

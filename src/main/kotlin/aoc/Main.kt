@@ -37,6 +37,7 @@ fun main(args: Array<String>) {
         } catch (e: ClassNotFoundException) {
             println("\u001B[32m========= Day $i =========\u001B[0m")
             println("\u001B[31mnot implemented yet\u001B[0m")
+            print(System.lineSeparator())
         }
 
     }
