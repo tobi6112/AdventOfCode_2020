@@ -1,6 +1,6 @@
-package exercises
+package aoc.exercises
 
-import base.AbstractExercise
+import aoc.base.AbstractExercise
 
 abstract class Policy {
     fun checkPw(password: String, p: Triple<Char, Int, Int>) = checkPw(password, p.first, p.second, p.third)
