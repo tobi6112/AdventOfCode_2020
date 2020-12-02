@@ -1,0 +1,5 @@
+language: java
+os: linux
+jdk: openjdk11
+script:
+  - ./gradlew mainBenchmark
