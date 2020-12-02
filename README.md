@@ -6,7 +6,7 @@
 
 Run regular with:
 ```
-gradlew application run
+gradlew run
 ```
 
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
