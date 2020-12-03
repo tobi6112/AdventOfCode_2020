@@ -2,6 +2,10 @@
 
 **This repository contains my [Advent Of Code 2020](https://adventofcode.com/) solutions written in Kotlin**
 
+<p align="center"><img height="350" width="auto" src="https://i.imgur.com/l1iQzgN.png" />
+<br />
+<sub><sup>Source: <a href="https://github.com/apolukhin/christmas-tree">apolukhin/christmas-tree</a>, Boost Software License 1.0</sub></sup></p>
+
 ## 🚀 Running
 
 Run regular with:
@@ -27,6 +31,8 @@ Options:
 ![https://i.imgur.com/HbEeD3A.png](https://i.imgur.com/HbEeD3A.png)
 
 ## 🕑 Benchmarking
+
+According to [Avoiding Benchmarking Pitfalls on the JVM](https://www.oracle.com/technical-resources/articles/java/architect-benchmarking.html) the measured elapsed time for the exercises is not meaningful. So a JMH Benchmark is included.
 
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
 ```
