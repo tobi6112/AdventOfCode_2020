@@ -14,6 +14,7 @@ version = "0212-SNAPSHOT"
 var includeBenchmark = "aoc.exercises.Day3"
 
 tasks.withType<Test> {
+    testLogging.showStandardStreams = true
     useJUnitPlatform()
 }
 
