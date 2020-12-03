@@ -15,7 +15,7 @@ class Day3 : AbstractExercise(3) {
     fun countTreesInSlope(right: Int = 3, down: Int = 1) :Long {
         return this.inputAsList
             .filterIndexed { index, _ ->  index % down == 0}
-            .mapIndexed { index, string ->  string[index * right % 31]}
+            .mapIndexed { index, string ->  string[index * right % string.length]}
             .filter { it == '#'}
             .size.toLong()
     }

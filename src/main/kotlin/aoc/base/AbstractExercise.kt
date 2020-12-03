@@ -34,7 +34,7 @@ abstract class AbstractExercise(private val day: Int) {
     }
 
     private fun printPart(number: Int, method: () -> Any?) {
-        ColoredPrinter.print("$number: ")
+        ColoredPrinter.print("Part $number: ")
         try {
             val part = solveAndMeasureTime { method() }
             ColoredPrinter.print("${part.first} ", Color.RED)
