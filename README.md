@@ -2,7 +2,7 @@
 
 **This repository contains my [Advent Of Code 2020](https://adventofcode.com/) solutions written in Kotlin**
 
-<center><img src="https://i.imgur.com/yHCeewU.png" /></center>
+<p align="center"><img height="350" width="auto" src="https://i.imgur.com/l1iQzgN.png" /></p>
 
 ## 🚀 Running
 
