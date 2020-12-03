@@ -24,7 +24,7 @@ Options:
     --help, -h -> Usage info
 ```
 
-![https://i.imgur.com/TuKAZrf.png](https://i.imgur.com/TuKAZrf.png)
+![https://i.imgur.com/HbEeD3A.png](https://i.imgur.com/HbEeD3A.png)
 
 ## 🕑 Benchmarking
 
