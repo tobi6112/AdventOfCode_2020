@@ -3,10 +3,8 @@
 **This repository contains my [Advent Of Code 2020](https://adventofcode.com/) solutions written in Kotlin**
 
 <p align="center"><img height="350" width="auto" src="https://i.imgur.com/l1iQzgN.png" />
-    
-    <sub><sup>Source: <a href="https://github.com/apolukhin/christmas-tree">apolukhin/christmas-tree</a>, Boost Software License 1.0</sub></sup>
 </p>
-
+<sub><sup>Source: <a href="https://github.com/apolukhin/christmas-tree">apolukhin/christmas-tree</a>, Boost Software License 1.0</sub></sup>
 
 ## 🚀 Running
 
