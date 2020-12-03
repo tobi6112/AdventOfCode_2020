@@ -55,6 +55,7 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:1.12.0")
     implementation("org.slf4j:slf4j-api:1.7.30")
     implementation("org.slf4j:slf4j-simple:1.7.30")
+    implementation("org.apache.commons:commons-lang3:3.10")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }

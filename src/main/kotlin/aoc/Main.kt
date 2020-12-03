@@ -1,6 +1,8 @@
 package aoc
 
 import aoc.base.AbstractExercise
+import aoc.utils.Color
+import aoc.utils.ColoredPrinter
 import kotlinx.cli.ArgParser
 import kotlinx.cli.ArgType
 import kotlinx.cli.default
@@ -37,9 +39,9 @@ fun main(args: Array<String>) {
                 logger.error("${kClass.qualifiedName} does not have superclass ${abstractExerciseClass.qualifiedName}.")
             }
         } catch (e: ClassNotFoundException) {
-            println("\u001B[32m========= Day $i =========\u001B[0m")
-            println("\u001B[31mnot implemented yet\u001B[0m")
-            print(System.lineSeparator())
+            ColoredPrinter.println("========= Day $i =========", Color.GREEN)
+            ColoredPrinter.println("not implemented yet", Color.RED)
+            ColoredPrinter.print(System.lineSeparator())
         }
 
     }

@@ -1,5 +1,7 @@
 package aoc.base
 
+import aoc.utils.Color
+import aoc.utils.ColoredPrinter
 import org.openjdk.jmh.annotations.Benchmark
 import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.State
@@ -26,23 +28,24 @@ abstract class AbstractExercise(private val day: Int) {
     abstract fun partTwo(): Any?
 
     final fun solve() {
-        println("\u001B[32m========= Day $day =========\u001B[0m")
+        ColoredPrinter.println("========= Day $day =========", Color.GREEN)
         printPart(1, this::partOne)
         printPart(2, this::partTwo)
-        print(System.lineSeparator())
+        ColoredPrinter.print(System.lineSeparator())
     }
 
     private fun printPart(number: Int, method: () -> Any?) {
-        print("\u001B[0mPart $number: \u001B[0m")
+        ColoredPrinter.print("$number: ")
         try {
             val part = solveAndMeasureTime { method() }
-            print("\u001B[31m${part.first} \u001B[33m(took ${part.second} ms)\u001B[0m")
+            ColoredPrinter.print("${part.first} ", Color.RED)
+            ColoredPrinter.print("(took ${part.second} ms)", Color.YELLOW)
         } catch (e: NotImplementedError) {
-            print("\u001B[31mnot implemented yet\u001B[0m")
+            ColoredPrinter.print("not implemented yet", Color.RED)
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        print(System.lineSeparator())
+        ColoredPrinter.print(System.lineSeparator())
     }
 
     private fun solveAndMeasureTime(e: () -> Any?): Pair<Any?, Double> {
