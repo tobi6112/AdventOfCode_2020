@@ -28,6 +28,8 @@ Options:
 
 ## 🕑 Benchmarking
 
+According to [Avoiding Benchmarking Pitfalls on the JVM](https://www.oracle.com/technical-resources/articles/java/architect-benchmarking.html) the measured elapsed time for the exercises is not meaningful. So a JMH Benchmark is included.
+
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
 ```
 gradlew benchmark
