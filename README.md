@@ -17,6 +17,8 @@ gradlew run --args="-d 1,2,3,4,5"
 
 ![https://i.imgur.com/TuKAZrf.png](https://i.imgur.com/TuKAZrf.png)
 
+## 🕑 Benchmarking
+
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
 ```
 gradlew benchmark
