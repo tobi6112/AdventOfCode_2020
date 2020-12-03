@@ -13,6 +13,10 @@ group = "org.example"
 version = "0212-SNAPSHOT"
 var includeBenchmark = "aoc.exercises.Day3"
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 repositories {
     mavenCentral()
     maven("https://dl.bintray.com/kotlin/kotlinx")
