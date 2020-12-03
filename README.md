@@ -12,7 +12,7 @@ gradlew run
 The application takes a `--days` or `-d` arguments to determine which daily Task should be executed. It takes numbers concated with `,` within (1..25). For example: `--days 1,2,4,5` and with gradle run:
 
 ```
-gradlew run --args="-days 1,2,3,4,5"
+gradlew run --args="-d 1,2,3,4,5"
 ```
 
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
