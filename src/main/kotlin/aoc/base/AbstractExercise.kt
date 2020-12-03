@@ -2,10 +2,9 @@ package aoc.base
 
 import aoc.utils.Color
 import aoc.utils.ColoredPrinter
-import org.openjdk.jmh.annotations.Benchmark
-import org.openjdk.jmh.annotations.Scope
-import org.openjdk.jmh.annotations.State
+import org.openjdk.jmh.annotations.*
 import java.lang.Exception
+import java.util.concurrent.TimeUnit
 import kotlin.system.measureNanoTime
 
 @State(Scope.Benchmark)
@@ -56,11 +55,15 @@ abstract class AbstractExercise(private val day: Int) {
     }
 
     @Benchmark
+    @BenchmarkMode(Mode.SampleTime)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     final fun benchmarkPartOne() {
         partOne()
     }
 
     @Benchmark
+    @BenchmarkMode(Mode.SampleTime)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     final fun benchmarkPartTwo() {
         partTwo()
     }
