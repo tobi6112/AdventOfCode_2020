@@ -7,7 +7,6 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.State
 import java.lang.Exception
 import kotlin.system.measureNanoTime
-import kotlin.system.measureTimeMillis
 
 @State(Scope.Benchmark)
 abstract class AbstractExercise(private val day: Int) {

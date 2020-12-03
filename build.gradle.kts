@@ -1,3 +1,5 @@
+import kotlin.reflect.full.memberProperties
+
 plugins {
     java
     application
@@ -9,6 +11,7 @@ plugins {
 
 group = "org.example"
 version = "0212-SNAPSHOT"
+var includeBenchmark = "aoc.exercises.Day3"
 
 repositories {
     mavenCentral()
@@ -66,6 +69,7 @@ benchmark {
             warmups = 5
             iterations = 10
             iterationTime = 3
+            includes = mutableListOf(includeBenchmark)
         }
     }
     targets {

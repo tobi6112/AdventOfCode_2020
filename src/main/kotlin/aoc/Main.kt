@@ -14,6 +14,10 @@ fun main(args: Array<String>) {
 
     val logger = KotlinLogging.logger { }
 
+    object {}::class.java.getResource("/banner.txt").readText().split(System.lineSeparator()).forEach {
+        ColoredPrinter.println(it, Color.YELLOW)
+    }
+
     val parser = ArgParser("aoc")
     val days by parser.option(ArgType.String, shortName = "d", description = "Days to execute as List e.g. 1,2,3,4").default((1..25).joinToString(","))
 
