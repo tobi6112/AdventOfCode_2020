@@ -11,7 +11,7 @@ plugins {
 
 group = "org.example"
 version = "0212-SNAPSHOT"
-var includeBenchmark = "aoc.exercises.Day3"
+val include: String by project
 
 tasks.withType<Test> {
     testLogging.showStandardStreams = true
@@ -74,7 +74,10 @@ benchmark {
             warmups = 5
             iterations = 10
             iterationTime = 3
-            includes = mutableListOf(includeBenchmark)
+            if (project.hasProperty("include")) {
+                println(include)
+                includes = mutableListOf(include)
+            }
         }
     }
     targets {
