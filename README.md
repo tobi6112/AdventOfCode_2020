@@ -15,9 +15,15 @@ The application takes a `--days` or `-d` arguments to determine which daily Task
 gradlew run --args="-d 1,2,3,4,5"
 ```
 
+![https://i.imgur.com/TuKAZrf.png](https://i.imgur.com/TuKAZrf.png)
+
+## 🕑 Benchmarking
+
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
 ```
 gradlew benchmark
 ```
 
 The benchmark will be printed to the console and exported as JSON to `build/reports/benchmarks/main`
+
+![https://i.imgur.com/LA5Him8.png](https://i.imgur.com/LA5Him8.png)
