@@ -14,7 +14,7 @@ object ColoredPrinter {
 
     fun isSupported(): Boolean {
         if(SystemUtils.IS_OS_LINUX) {
-            return System.console() != null && System.getenv().get("TERM") != null;
+            return System.console() != null && System.getenv()["TERM"] != null;
         } else if(SystemUtils.IS_OS_WINDOWS) {
             return true; //TODO not implemented yet
         }

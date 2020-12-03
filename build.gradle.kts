@@ -56,6 +56,7 @@ java {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("com.google.guava:guava:30.0-jre")
     implementation("org.openjdk.jmh:jmh-core:1.26")
     implementation("org.jetbrains.kotlinx:kotlinx.benchmark.runtime-jvm:0.2.0-dev-20")
     implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3")

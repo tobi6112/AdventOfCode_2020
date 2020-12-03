@@ -2,6 +2,7 @@ package aoc.base
 
 import aoc.utils.Color
 import aoc.utils.ColoredPrinter
+import com.google.common.base.Stopwatch
 import org.openjdk.jmh.annotations.*
 import java.lang.Exception
 import java.util.concurrent.TimeUnit
@@ -50,10 +51,9 @@ abstract class AbstractExercise(private val day: Int) {
     }
 
     private fun solveAndMeasureTime(e: () -> Any?): Pair<Any?, Double> {
-        val result: Any?
-        val time = measureNanoTime {
-            result = e()
-        }
+        val stopwatch = Stopwatch.createStarted()
+        val result: Any? = e()
+        val time = stopwatch.elapsed().toNanos()
         return Pair(result, time.toDouble().div(1_000_000))
     }
 
