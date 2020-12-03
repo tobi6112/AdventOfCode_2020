@@ -20,6 +20,7 @@ fun main(args: Array<String>) {
 
     val parser = ArgParser("aoc")
     val days by parser.option(ArgType.String, shortName = "d", description = "Days to execute as List e.g. 1,2,3,4").default((1..25).joinToString(","))
+    val repetitions by parser.option(ArgType.Int, shortName = "r", description = "Repetitions of solving the exercise. Kind of a benchmark warmup for the JIT Compiler").default(1)
 
     parser.parse(args)
 
@@ -33,7 +34,7 @@ fun main(args: Array<String>) {
             if (kClass.allSuperclasses.contains(abstractExerciseClass)) {
                 try {
                     val day: AbstractExercise = kClass.createInstance() as AbstractExercise
-                    day.solve()
+                    day.solve(repetitions)
                 } catch (e2: Exception) {
                     logger.error(e2) {
                         "Couldn't instantiate ${kClass.qualifiedName}"

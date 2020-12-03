@@ -15,6 +15,15 @@ The application takes a `--days` or `-d` arguments to determine which daily Task
 gradlew run --args="-d 1,2,3,4,5"
 ```
 
+## 🧰 Parameters
+
+```
+Options:
+    --days, -d [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25] -> Days to execute as List e.g. 1,2,3,4 { String }
+    --repetitions, -r [2] -> Repetitions of solving the exercise. Kind of a benchmark warmup for the JIT Compiler { Int }
+    --help, -h -> Usage info
+```
+
 ![https://i.imgur.com/TuKAZrf.png](https://i.imgur.com/TuKAZrf.png)
 
 ## 🕑 Benchmarking

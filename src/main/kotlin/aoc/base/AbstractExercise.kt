@@ -25,15 +25,18 @@ abstract class AbstractExercise(private val day: Int) {
 
     abstract fun partTwo(): Any?
 
-    final fun solve() {
+    final fun solve(repetitions: Int = 1) {
         ColoredPrinter.println("========= Day $day =========", Color.GREEN)
-        printPart(1, this::partOne)
-        printPart(2, this::partTwo)
+        repeat(repetitions) {
+            ColoredPrinter.println("Repetition ${it + 1}:", Color.CYAN)
+            printPart(1, this::partOne)
+            printPart(2, this::partTwo)
+        }
         ColoredPrinter.print(System.lineSeparator())
     }
 
     private fun printPart(number: Int, method: () -> Any?) {
-        ColoredPrinter.print("Part $number: ")
+        ColoredPrinter.print("Part $number: ", padding = 2)
         try {
             val part = solveAndMeasureTime { method() }
             ColoredPrinter.print("${part.first} ", Color.RED)

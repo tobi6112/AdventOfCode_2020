@@ -3,8 +3,8 @@ package aoc.utils
 import org.apache.commons.lang3.SystemUtils;
 
 object ColoredPrinter {
-    fun print(string: String, foregroundColor: Color = Color.NONE, backgroundColor: Color = Color.NONE) {
-        kotlin.io.print("${foregroundColor.codeForeground}${backgroundColor.codeBackground}$string\u001B[0m")
+    fun print(string: String, foregroundColor: Color = Color.NONE, backgroundColor: Color = Color.NONE, padding: Int = 0) {
+        kotlin.io.print(" ".repeat(padding) + "${foregroundColor.codeForeground}${backgroundColor.codeBackground}$string\u001B[0m")
     }
 
     fun println(string: String, foregroundColor: Color = Color.NONE, backgroundColor: Color = Color.NONE) {
