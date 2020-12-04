@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
 
     d.forEach { i ->
         try {
-            val kClass = Class.forName("aoc.exercises.Day$i").kotlin
+            val kClass = Class.forName("aoc.exercises.day$i.Day$i").kotlin
             if (kClass.allSuperclasses.contains(abstractExerciseClass)) {
                 try {
                     val day: AbstractExercise = kClass.createInstance() as AbstractExercise
