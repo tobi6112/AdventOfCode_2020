@@ -1,4 +1,4 @@
-package aoc.exercises
+package aoc.exercises.day1
 
 import aoc.base.AbstractExercise
 

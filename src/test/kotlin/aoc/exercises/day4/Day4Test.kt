@@ -1,4 +1,4 @@
-package aoc.exercises
+package aoc.exercises.day4
 
 import aoc.base.AbstractExerciseTest
 import org.junit.jupiter.api.Assertions

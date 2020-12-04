@@ -61,7 +61,7 @@ fun getTest(day: Int) : String {
 }
 
 fun createExercise(day: Int) {
-    val dir = File("src/main/kotlin/aoc/exercises")
+    val dir = File("src/main/kotlin/aoc/exercises/day${day}")
     dir.mkdirs()
     val file = File(dir, "Day${day}.kt")
     if(!file.exists()) {
