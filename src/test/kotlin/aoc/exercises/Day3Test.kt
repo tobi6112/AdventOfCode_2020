@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class Day3Test : AbstractExerciseTest() {
-    private val day3 = Day3()
+  private val day3 = Day3()
 
-    @Test
-    override fun partOne() {
-        Assertions.assertEquals(day3.partOne(), 7L)
-    }
+  @Test
+  override fun partOne() {
+    Assertions.assertEquals(7L, day3.partOne())
+  }
 
-    @Test
-    override fun partTwo() {
-        Assertions.assertEquals(day3.partTwo(), 336L)
-    }
+  @Test
+  override fun partTwo() {
+    Assertions.assertEquals(336L, day3.partTwo())
+  }
 }

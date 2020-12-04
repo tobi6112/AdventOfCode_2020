@@ -93,7 +93,7 @@ spotless {
     ratchetFrom("origin/master")
     encoding("UTF-8")
     kotlin {
-        ktlint()
+        ktfmt()
     }
     kotlinGradle {
         target("*.gradle.kts")
