@@ -42,7 +42,7 @@ gradle benchmark
 To select a specific day for benchmark use the `include` Property which takes a regular expression. For example you can benchmark day 3 by 
 ```
 gradle benchmark -Pinclude=Day3
-gradle benchmark -Pinclude=aoc.exercises.Day3
+gradle benchmark -Pinclude=aoc.exercises.day3
 ```
 
 The benchmark will be printed to the console and exported as JSON to `build/reports/benchmarks/main`
