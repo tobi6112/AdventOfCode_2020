@@ -19,14 +19,14 @@ class Day4 : AbstractExercise(4) {
               else -> false
             }
           },
-          Pair("hcl") { it.trim().matches("^#[0-9a-f]{6}$".toRegex()) },
+          Pair("hcl") { it.trim().startsWith("#") && it.trim().length == 7 && it.takeLast(6).toIntOrNull(16) != null },
           Pair("ecl") {
             when (it) {
               "amb", "blu", "brn", "gry", "grn", "hzl", "oth" -> true
               else -> false
             }
           },
-          Pair("pid") { it.trim().matches("^[0-9]{9}$".toRegex()) })
+          Pair("pid") { it.trim().length == 9 && it.toIntOrNull() != null })
 
   override fun partOne(): Any? {
     return inputAsList
