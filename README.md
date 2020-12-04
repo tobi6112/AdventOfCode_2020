@@ -10,13 +10,13 @@
 
 Run regular with:
 ```
-gradlew run
+gradle run
 ```
 
 The application takes a `--days` or `-d` arguments to determine which daily Task should be executed. It takes numbers concated with `,` within (1..25). For example: `--days 1,2,4,5` and with gradle run:
 
 ```
-gradlew run --args="-d 1,2,3,4,5"
+gradle run --args="-d 1,2,3,4,5"
 ```
 
 ## 🧰 Parameters
@@ -36,15 +36,27 @@ According to [Avoiding Benchmarking Pitfalls on the JVM](https://www.oracle.com/
 
 Run detailed benchmarks with (5 Warmups - 10 Iterations):
 ```
-gradlew benchmark
+gradle benchmark
 ```
 
 To select a specific day for benchmark use the `include` Property which takes a regular expression. For example you can benchmark day 3 by 
 ```
-gradlew benchmark -Pinclude=Day3
-gradlew benchmark -Pinclude=aoc.exercises.Day3
+gradle benchmark -Pinclude=Day3
+gradle benchmark -Pinclude=aoc.exercises.Day3
 ```
 
 The benchmark will be printed to the console and exported as JSON to `build/reports/benchmarks/main`
 
 ![https://i.imgur.com/LA5Him8.png](https://i.imgur.com/LA5Him8.png)
+
+# 🧙 Codegen
+
+This repository is able to create its file structure for each days exercise by running
+```
+gradle codegen -Pd=5
+```
+To get your personal input you need to set your SESSION Cookie as environment variable AOC_SESSION or put it inside a .env file at the root of the project.
+Or you can skip obtaining the inputs by adding the `s` property
+```
+gradle codegen -Pd=5 -Ps
+```

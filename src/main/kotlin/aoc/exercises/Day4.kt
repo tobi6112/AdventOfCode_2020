@@ -7,7 +7,7 @@ class Day4 : AbstractExercise(4) {
   override val inputAsList: List<String>
     get() = readFileAsList("(${System.lineSeparator()}){2}".toRegex())
 
-  private final val predicates: Map<String, (String) -> Boolean> =
+    private final val predicates: Map<String, (String) -> Boolean> =
       mapOf(
           Pair("byr") { it.toIntOrNull() in 1920..2002 },
           Pair("iyr") { it.toIntOrNull() in 2010..2020 },
@@ -53,4 +53,8 @@ class Day4 : AbstractExercise(4) {
         }
         .size
   }
+}
+
+fun main() {
+    Day4().solve()
 }

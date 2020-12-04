@@ -1,0 +1,21 @@
+package aoc.exercises
+
+import aoc.base.AbstractExercise
+
+class Day{{day}} : AbstractExercise({{day}}) {
+
+  override val inputAsList: List<String>
+    get() = readFileAsList()
+
+  override fun partOne(): Any? {
+    TODO("Not yet implemented")
+  }
+
+  override fun partTwo(): Any? {
+    TODO("Not yet implemented")
+  }
+}
+
+fun main() {
+    Day{{day}}().solve()
+}

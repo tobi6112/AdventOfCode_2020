@@ -4,11 +4,11 @@ plugins {
     java
     application
     kotlin("jvm") version "1.4.20"
+    id("co.uzzu.dotenv.gradle") version "1.1.0"
     id("com.diffplug.spotless") version "5.8.2"
     id("kotlinx.benchmark") version "0.2.0-dev-20"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.20"
 }
-
 group = "org.example"
 version = "0212-SNAPSHOT"
 val include: String by project
@@ -21,6 +21,7 @@ tasks.withType<Test> {
 repositories {
     mavenCentral()
     maven("https://dl.bintray.com/kotlin/kotlinx")
+    maven("https://jitpack.io")
 }
 
 application {
@@ -32,7 +33,7 @@ tasks.register<Jar>("uberJar") {
 
     manifest {
         attributes(
-            "Main-Class" to application.mainClassName
+                "Main-Class" to application.mainClassName
         )
     }
 
@@ -56,6 +57,7 @@ java {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("com.github.kittinunf.fuel:fuel:2.3.0")
     implementation("com.google.guava:guava:30.0-jre")
     implementation("org.openjdk.jmh:jmh-core:1.26")
     implementation("org.jetbrains.kotlinx:kotlinx.benchmark.runtime-jvm:0.2.0-dev-20")
@@ -103,4 +105,18 @@ spotless {
 
 allOpen {
     annotation("org.openjdk.jmh.annotations.State")
+}
+
+tasks.register<JavaExec>("codegen") {
+    environment("AOC_SESSION", env.AOC_SESSION.value)
+    if(project.hasProperty("d")) {
+        args("-d")
+        args(properties["d"])
+    }
+    if(project.hasProperty("s")) {
+        args("-s")
+        args(properties["s"])
+    }
+    classpath = sourceSets.test.get().runtimeClasspath
+    main = "aoc.utils.codegen.CodegenKt"
 }

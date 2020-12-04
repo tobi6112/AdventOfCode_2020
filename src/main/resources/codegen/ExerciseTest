@@ -1,0 +1,22 @@
+package aoc.exercises
+
+import aoc.base.AbstractExerciseTest
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
+
+class Day{{day}}Test : AbstractExerciseTest() {
+
+  val day{{day}} = Day{{day}}()
+
+  @Test
+  override fun partOne() {
+    TODO("not yet implemented")
+    //Assertions.assertEquals(0, day{{day}}.partOne())
+  }
+
+  @Test
+  override fun partTwo() {
+    TODO("not yet implemented")
+    //Assertions.assertEquals(0, day{{day}}.partTwo())
+  }
+}
