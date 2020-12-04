@@ -75,7 +75,7 @@ fun getExercise(day: Int) : String {
 }
 
 fun createInput(day: Int, sessionCookie: String) {
-    val dir = File("src/main/resources/temp/inputs/")
+    val dir = File("src/main/resources/inputs/")
     dir.mkdirs()
     val file = File(dir, "Day$day")
     if(!file.exists()) {
