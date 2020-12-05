@@ -16,12 +16,24 @@ class Day5 : AbstractExercise(5) {
     }
 
     override fun partTwo(): Any? {
-      val (id1, _) = inputAsList
-                  .map { getId(it) }
-                  .sorted()
-                  .zipWithNext()
-                  .find { it.second - it.first == 2 }!!
-      return id1 + 1
+      return partTwoWithSubtraction()
+    }
+
+    //Solution 1: Use list subtraction
+    private fun partTwoWithSubtraction(): Int {
+        val a = inputAsList.map { getId(it) }
+        val b = a.map { it + 1 }
+        return a.subtract(b).first()
+    }
+
+    //Solution 2: Use zip operation
+    private fun partTwoWithZip(): Int {
+        val (id1, _) = inputAsList
+            .map { getId(it) }
+            .sorted()
+            .zipWithNext()
+            .find { it.second - it.first == 2 }!!
+        return id1 + 1
     }
 
     fun getId(s: String): Int {
