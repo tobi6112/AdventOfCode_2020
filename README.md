@@ -51,7 +51,7 @@ The benchmark will be printed to the console and exported as JSON to `build/repo
 
 # 🧙 Codegen
 
-This repository is able to create its file structure for each days exercise by running
+The project is able to create its file structure for each days exercise by running
 ```
 gradle codegen -Pd=5
 ```
@@ -59,4 +59,9 @@ To get your personal input you need to set your SESSION Cookie as environment va
 Or you can skip obtaining the inputs by adding the `s` property
 ```
 gradle codegen -Pd=5 -Ps
+```
+
+And you can download the exercise textual description as readme with
+```
+gradle readme -Pd=5
 ```
