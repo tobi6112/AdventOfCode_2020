@@ -20,7 +20,7 @@ abstract class AbstractExercise(private val day: Int) {
   val inputAsString = readFileAsString()
 
   final fun readFileAsList(): List<String> {
-    return readFileAsList(System.lineSeparator())
+    return readFileAsList("\\r?\\n".toRegex())
   }
 
   final fun readFileAsList(split: String): List<String> {

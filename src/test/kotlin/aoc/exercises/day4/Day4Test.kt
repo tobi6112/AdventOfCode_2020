@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 
 class Day4Test : AbstractExerciseTest() {
 
-  val day4 = Day4()
+  private val day4 = Day4()
 
   @Test
   override fun partOne() {
