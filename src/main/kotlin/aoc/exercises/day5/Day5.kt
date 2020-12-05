@@ -23,7 +23,7 @@ class Day5 : AbstractExercise(5) {
     private fun partTwoWithSubtraction(): Int {
         val a = inputAsList.map { getId(it) }
         val b = a.map { it + 1 }
-        return a.subtract(b).first()
+        return b.subtract(a).first()
     }
 
     //Solution 2: Use zip operation
