@@ -4,7 +4,7 @@
 
 <p align="center"><img height="350" width="auto" src="https://i.imgur.com/l1iQzgN.png" />
 <br />
-<sub><sup>Source: <a href="https://github.com/apolukhin/christmas-tree">apolukhin/christmas-tree</a>, Boost Software License 1.0</sub></sup></p>
+<sub><sup>Source: <a href="https://github.com/apolukhin/christmas-tree">apolukhin/christmas-tree</a>, Boost Software License 1.0</sup></sub></p>
 
 ## 🚀 Running
 
