@@ -67,6 +67,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:1.7.30")
     implementation("org.slf4j:slf4j-simple:1.7.30")
     implementation("org.apache.commons:commons-lang3:3.10")
+    implementation("org.jsoup:jsoup:1.13.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }
@@ -119,4 +120,14 @@ tasks.register<JavaExec>("codegen") {
     }
     classpath = sourceSets.test.get().runtimeClasspath
     main = "aoc.utils.codegen.CodegenKt"
+}
+
+tasks.register<JavaExec>("readme") {
+    environment("AOC_SESSION", env.AOC_SESSION.value)
+    if(project.hasProperty("d")) {
+        args("-d")
+        args(properties["d"])
+    }
+    classpath = sourceSets.test.get().runtimeClasspath
+    main = "aoc.utils.codegen.ReadmeWriterKt"
 }

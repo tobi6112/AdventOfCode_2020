@@ -10,8 +10,6 @@ import java.io.File
 
 fun main(args: Array<String>) {
 
-    println(System.getProperty("d"))
-
     val parser = ArgParser("aoc")
     val day by parser.option(ArgType.Int, shortName = "d", description = "Day to generate").required()
     val skip by parser.option(ArgType.Boolean, shortName = "s", description = "Skips the input generation").default(false)
