@@ -10,13 +10,11 @@ class Day6Test : AbstractExerciseTest() {
 
   @Test
   override fun partOne() {
-    //TODO("not yet implemented")
     Assertions.assertEquals(6530, day6.partOne())
   }
 
   @Test
   override fun partTwo() {
-    //TODO("not yet implemented")
     Assertions.assertEquals(3323, day6.partTwo())
   }
 }
