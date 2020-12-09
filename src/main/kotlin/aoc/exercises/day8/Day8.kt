@@ -7,7 +7,6 @@ class Day8 : AbstractExercise(8) {
   override val inputAsList: List<String>
     get() = readFileAsList()
 
-  val map = createMap()
   val set = hashSetOf<Int>()
 
   private fun createMap() : MutableMap<Int, Pair<String, Int>> {
@@ -24,11 +23,13 @@ class Day8 : AbstractExercise(8) {
   }
 
   override fun partOne(): Any? {
+    val map = createMap()
     val (_, acc) = process(map)
     return acc
   }
 
   override fun partTwo(): Any? {
+    val map = createMap()
     for(i in 0 until map.entries.size) {
       val value = map[i]
       map[i] = swap(value) //Swap
