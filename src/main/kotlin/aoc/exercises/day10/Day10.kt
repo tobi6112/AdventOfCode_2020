@@ -15,9 +15,6 @@ class Day10 : AbstractExercise(10) {
       .plus(deviceRating())
       .sorted()
       .zipWithNext()
-      .takeWhile {
-        canConnect(it.first, it.second)
-      }
     val diffOne = list.count { it.second - it.first == 1 }
     val diffTwo = list.count { it.second - it.first == 3 }
 
