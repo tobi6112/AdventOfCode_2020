@@ -72,14 +72,14 @@ abstract class AbstractExercise(private val day: Int) {
 
   @Benchmark
   @BenchmarkMode(Mode.SampleTime)
-  @OutputTimeUnit(TimeUnit.NANOSECONDS)
+  @OutputTimeUnit(TimeUnit.MILLISECONDS)
   final fun benchmarkPartOne() {
     partOne()
   }
 
   @Benchmark
   @BenchmarkMode(Mode.SampleTime)
-  @OutputTimeUnit(TimeUnit.NANOSECONDS)
+  @OutputTimeUnit(TimeUnit.MILLISECONDS)
   final fun benchmarkPartTwo() {
     partTwo()
   }
