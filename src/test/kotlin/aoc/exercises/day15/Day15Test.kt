@@ -10,11 +10,11 @@ class Day15Test : AbstractExerciseTest() {
 
   @Test
   override fun partOne() {
-    Assertions.assertEquals(436, day15.partOne())
+    Assertions.assertEquals(436L, day15.partOne())
   }
 
   @Test
   override fun partTwo() {
-    Assertions.assertEquals(175594, day15.partTwo())
+    Assertions.assertEquals(175594L, day15.partTwo())
   }
 }
