@@ -12,12 +12,12 @@ class Day19Test : AbstractExerciseTest() {
   @ExperimentalStdlibApi
   @Test
   override fun partOne() {
-    Assertions.assertEquals(2, day19.partOne())
+    Assertions.assertEquals(162, day19.partOne())
   }
 
   @ExperimentalStdlibApi
   @Test
   override fun partTwo() {
-    Assertions.assertEquals(12, day19.partTwo())
+    Assertions.assertEquals(267, day19.partTwo())
   }
 }
